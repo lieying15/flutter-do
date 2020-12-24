@@ -1,1 +1,128 @@
 TODO: Add your license here.
+ios模拟器在编译时会报错。希望您尽快解决一下，谢谢
+
+Xcode's output:
+↳
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/flutter_app_upgrade-1.1.0/ios/Classes/SwiftFlutterAppUpgradePlugin.swift:13:14: warning: non-breaking space (U+00A0) used instead of regular space
+              let infoDictionary = Bundle.main.infoDictionary!
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/flutter_app_upgrade-1.1.0/ios/Classes/SwiftFlutterAppUpgradePlugin.swift:13:32: warning: non-breaking space (U+00A0) used instead of regular space
+              let infoDictionary = Bundle.main.infoDictionary!
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/flutter_app_upgrade-1.1.0/ios/Classes/SwiftFlutterAppUpgradePlugin.swift:14:14: warning: non-breaking space (U+00A0) used instead of regular space
+              let majorVersion = infoDictionary["CFBundleShortVersionString"]//主程序版本号
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/flutter_app_upgrade-1.1.0/ios/Classes/SwiftFlutterAppUpgradePlugin.swift:17:49: warning: treating a forced downcast to 'String' as optional will never produce 'nil'
+              map["packageName"] = bundleIdentifier as! String
+                                                    ^
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/flutter_app_upgrade-1.1.0/ios/Classes/SwiftFlutterAppUpgradePlugin.swift:17:51: note: use 'as?' to perform a conditional downcast to 'String'
+              map["packageName"] = bundleIdentifier as! String
+                                                      ^
+                                                      ?
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/flutter_app_upgrade-1.1.0/ios/Classes/SwiftFlutterAppUpgradePlugin.swift:17:32: note: add parentheses around the cast to silence this warning
+              map["packageName"] = bundleIdentifier as! String
+                                   ^
+                                   (                          )
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/flutter_app_upgrade-1.1.0/ios/Classes/SwiftFlutterAppUpgradePlugin.swift:18:45: warning: treating a forced downcast to 'String' as optional will never produce 'nil'
+              map["versionName"] = majorVersion as! String
+                                                ^
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/flutter_app_upgrade-1.1.0/ios/Classes/SwiftFlutterAppUpgradePlugin.swift:18:47: note: use 'as?' to perform a conditional downcast to 'String'
+              map["versionName"] = majorVersion as! String
+                                                  ^
+                                                  ?
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/flutter_app_upgrade-1.1.0/ios/Classes/SwiftFlutterAppUpgradePlugin.swift:18:32: note: add parentheses around the cast to silence this warning
+              map["versionName"] = majorVersion as! String
+                                   ^
+                                   (                      )
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.m:77:33: warning: incompatible pointer types sending 'FlutterEngine *' to parameter of type 'NSObject<FlutterBinaryMessenger> * _Nonnull' [-Wincompatible-pointer-types]
+                    binaryMessenger:_headlessEngine];
+                                    ^~~~~~~~~~~~~~~
+    In module 'Flutter' imported from /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.h:1:
+    /Users/dong/xfs/dev_new/ios/Flutter/Flutter.framework/Headers/FlutterChannels.h:178:74: note: passing argument to parameter 'messenger' here
+                          binaryMessenger:(NSObject<FlutterBinaryMessenger>*)messenger;
+                                                                             ^
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.m:358:16: warning: 'timeControlStatus' is only available on iOS 10.0 or newer [-Wunguarded-availability]
+        if (player.timeControlStatus == AVPlayerTimeControlStatusPlaying) {
+                   ^~~~~~~~~~~~~~~~~
+    In module 'AVFoundation' imported from /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.m:5:
+    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h:194:59: note: 'timeControlStatus' has been marked as being introduced in iOS 10.0 here, but the deployment target is iOS 8.0.0
+    @property (nonatomic, readonly) AVPlayerTimeControlStatus timeControlStatus API_AVAILABLE(macos(10.12), ios(10.0), tvos(10.0), watchos(3.0));
+                                                              ^
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.m:358:16: note: enclose 'timeControlStatus' in an @available check to silence this warning
+        if (player.timeControlStatus == AVPlayerTimeControlStatusPlaying) {
+                   ^~~~~~~~~~~~~~~~~
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.m:358:37: warning: 'AVPlayerTimeControlStatusPlaying' is only available on iOS 10.0 or newer [-Wunguarded-availability]
+        if (player.timeControlStatus == AVPlayerTimeControlStatusPlaying) {
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    In module 'AVFoundation' imported from /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.m:5:
+    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h:180:28: note: 'AVPlayerTimeControlStatus' has been marked as being introduced in iOS 10.0 here, but the deployment target is iOS 8.0.0
+    typedef NS_ENUM(NSInteger, AVPlayerTimeControlStatus) {
+                               ^
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.m:358:37: note: enclose 'AVPlayerTimeControlStatusPlaying' in an @available check to silence this warning
+        if (player.timeControlStatus == AVPlayerTimeControlStatusPlaying) {
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.m:363:23: warning: 'timeControlStatus' is only available on iOS 10.0 or newer [-Wunguarded-availability]
+        } else if (player.timeControlStatus == AVPlayerTimeControlStatusPaused) {
+                          ^~~~~~~~~~~~~~~~~
+    In module 'AVFoundation' imported from /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.m:5:
+    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h:194:59: note: 'timeControlStatus' has been marked as being introduced in iOS 10.0 here, but the deployment target is iOS 8.0.0
+    @property (nonatomic, readonly) AVPlayerTimeControlStatus timeControlStatus API_AVAILABLE(macos(10.12), ios(10.0), tvos(10.0), watchos(3.0));
+                                                              ^
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.m:363:23: note: enclose 'timeControlStatus' in an @available check to silence this warning
+        } else if (player.timeControlStatus == AVPlayerTimeControlStatusPaused) {
+                          ^~~~~~~~~~~~~~~~~
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.m:363:44: warning: 'AVPlayerTimeControlStatusPaused' is only available on iOS 10.0 or newer [-Wunguarded-availability]
+        } else if (player.timeControlStatus == AVPlayerTimeControlStatusPaused) {
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    In module 'AVFoundation' imported from /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.m:5:
+    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h:180:28: note: 'AVPlayerTimeControlStatus' has been marked as being introduced in iOS 10.0 here, but the deployment target is iOS 8.0.0
+    typedef NS_ENUM(NSInteger, AVPlayerTimeControlStatus) {
+                               ^
+    /Users/dong/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.13.7/ios/Classes/AudioplayersPlugin.m:363:44: note: enclose 'AVPlayerTimeControlStatusPaused' in an @available check to silence this warning
+        } else if (player.timeControlStatus == AVPlayerTimeControlStatusPaused) {
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    5 warnings generated.
+
+    Command PhaseScriptExecution failed with a nonzero exit code
+    note: Using new build system
+    note: Building targets in parallel
+    note: Planning build
+    note: Constructing build description
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'DACircularProgress' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'DZNEmptyDataSet' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'GTMBase64' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'FMDB' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'IQKeyboardManager' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'webview_flutter' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'url_launcher' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'shared_preferences' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'permission_handler' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'path_provider' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'package_info' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'flutter_app_upgrade' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'device_info' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'audioplayers' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'YYModel' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'YYImage' from project 'Pods')
+    warning: AssetsLibrary is deprecated. Consider migrating to Photos instead. (in target 'YYImage' from project 'Pods')
+    warning: MobileCoreServices has been renamed. Use CoreServices instead. (in target 'YYImage' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'YYCache' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'XMLReader' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'Toast' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'TZImagePickerController' from project 'Pods')
+    warning: MobileCoreServices has been renamed. Use CoreServices instead. (in target 'TZImagePickerController' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'SVProgressHUD' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'Reachability' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'Masonry' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'MJRefresh' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'MJExtension' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'MBProgressHUD' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'fluttertoast' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'YYWebImage' from project 'Pods')
+    warning: AssetsLibrary is deprecated. Consider migrating to Photos instead. (in target 'YYWebImage' from project 'Pods')
+    warning: MobileCoreServices has been renamed. Use CoreServices instead. (in target 'YYWebImage' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'HUPhotoBrowser' from project 'Pods')
+    warning: AssetsLibrary is deprecated. Consider migrating to Photos instead. (in target 'HUPhotoBrowser' from project 'Pods')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'connectivity' from project 'Pods')
+    warning: None of the architectures in ARCHS (x86_64) are valid. Consider setting ARCHS to $(ARCHS_STANDARD) or updating it to include at least one value from VALID_ARCHS (arm64). (in target 'Runner' from project 'Runner')
+    warning: The iOS Simulator deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.2.99. (in target 'Flutter' from project 'Pods')
+
+Could not build the application for the simulator.
+Error launching application on iPhone 12 Pro Max.
